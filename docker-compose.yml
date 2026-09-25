@@ -1,0 +1,13 @@
+services:
+  blacklight-l1-node:
+    image: ghcr.io/nillionnetwork/blacklight-l1-node/node:0.1.0
+    container_name: blacklight-l1-node
+    init: true
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - blacklight-l1-node-state:/data/state
+
+volumes:
+  blacklight-l1-node-state:
